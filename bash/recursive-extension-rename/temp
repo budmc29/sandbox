@@ -1,0 +1,1 @@
+find test -type f -name '*.b' -print0 | xargs -0 rename 's/.b$/.a/'
