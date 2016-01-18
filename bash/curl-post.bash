@@ -2,4 +2,4 @@
 
 # send get request with curl
 
-curl -i -X POST -H "Accept: Application/json" -H "Content-Type: application/json" httpbin.org/post -d '{"email":"mail@example.com","password":"123456", "remember":"true"}'
+curl -i -X POST -H "Accept: Application/json" -H "Content-Type: application/json" https://site.com/api/2/login -d '{"email":"user@domain.com","password":123456, "device_id":123456}'
