@@ -13,3 +13,6 @@ scp -r folder/ user@machine:folder/another_folder
 
 # use identity file for ssh connection
 scp -r -i ~/.ssh/marketplace folder_name/ user@host:foder/subfolder
+
+# scp from server to local machine root
+scp user@sshmachine:file_name ~/
