@@ -1,12 +1,16 @@
 #!/bin/bash
 
-# kill sessions by id
+echo "First tmux session"
+read START
+
+echo "Last tmux session"
+read LAST
 
 # start from this numbered window
-counter=10
+counter=$START
 
 # kill sessions from 10 to 33
-while [ $counter -lt 33 ]; do
+while [ $counter -le $LAST ]; do
   tmux kill-session -t $counter
   let counter=counter+1
 done
