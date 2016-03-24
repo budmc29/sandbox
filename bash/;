@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [[ -f "$1" ]]; then
+  echo "The file was found"
+else
+  echo "The file was not found, please enter the correct path as the first parameter."
+  exit
+fi
+
+items=( "awsstaging1" "awsstaging2" "awsstaging3" "awsstaging4" "awsstaging5" )
+
+for item in "${items[@]}" ; do
+
+  echo $item;
+
+  ssh accounts_staging@straylight.yoyogames.com <<RUNCODE
+
+    cd ~/accounts_staging/current /
+    mysqldump --password=gbie4HnR9m1DZ8y6aMCO --user asset_staging gascore_staging > /tmp/accountsstaging_database.sql /
+
+    cat /tmp/accountsstaging_database.sql >> ~/accountsstaging_database.sql /
+
+  RUNCODE
+
+done
