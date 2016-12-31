@@ -30,11 +30,11 @@ function parse_params()
     PARAM="$1"
     shift
     case "$PARAM" in
-      (backup|-b)
+      (--backup|backup|-b)
         dotter_backup
         exit 0
         ;;
-      (update|-u)
+      (--update|update|-u)
         dotter_update
         exit 0
         ;;
@@ -95,11 +95,11 @@ Usage:
 
 Options
 
-  [[--]backup|b]
+  [[--]backup|-b]
 
   Backup the files on this machine to versino control.
 
-  [[--]update]
+  [[--]update|-u]
 
     Update the files on this machine with the files from version control.
 
