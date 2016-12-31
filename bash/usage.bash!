@@ -1,0 +1,24 @@
+#!/bin/bash
+
+function usage()
+{
+  printf "%b" "
+
+Usage:
+
+  dotter [options]
+
+Options
+
+  [[--]backup]
+
+  Backup the files on this machine to versino control.
+
+  [[--]update]
+
+    Update the files on this machine with the files from version control.
+
+"
+}
+
+usage

@@ -1,0 +1,8 @@
+#     key map
+#     |   save file
+#     |   |   clear
+#     |   |   |      run the file
+#     |   |   |      |
+#     |   |   |      |
+#     v   v   v      v
+:map ,s ;w\|! clear; bash ./% params <cr>
