@@ -1,10 +1,7 @@
-#!/bin/bash
+#!/bin/bash --login
 
 # while loop
-
-counter=0
-
-while [ "$counter" -lt 10 ]; do
-  echo "The counter is $counter"
-  let counter=counter+1
+i="0"
+while [[ $i -lt 10 ]] ; do
+  touch "file$i"; i=$[$i+1];
 done
