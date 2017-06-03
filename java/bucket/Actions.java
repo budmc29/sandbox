@@ -1,5 +1,3 @@
-package bucket;
-
 import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;

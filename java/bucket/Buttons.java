@@ -1,11 +1,7 @@
-package bucket;
-
-import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.plaf.DimensionUIResource;
 
 public class Buttons extends JFrame {
   private JPanel pannel = new JPanel();

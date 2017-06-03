@@ -1,5 +1,3 @@
-package bucket;
-
 import java.util.Arrays;
 
 public class ArraySort

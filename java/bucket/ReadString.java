@@ -1,5 +1,3 @@
-package bucket;
-
 import java.io.*;
 
 public class ReadString
