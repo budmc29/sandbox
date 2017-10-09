@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/skeleton.rb'
-
-sk = Skeleton.new
-puts sk.run
