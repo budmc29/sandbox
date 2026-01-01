@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BlogPostRepository::class)]
 #[ORM\Table(name: 'blog_posts')]
+#[ORM\HasLifecycleCallbacks]
 class BlogPost
 {
     #[ORM\Id]
