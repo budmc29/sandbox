@@ -15,6 +15,14 @@
 /.vite/
 ###< Node.js ###
 
+###> Docker ###
+.docker/
+###< Docker ###
+
+###> Docker ###
+.docker/
+###< Docker ###
+
 ###> phpunit/phpunit ###
 /phpunit.xml
 /.phpunit.cache/
