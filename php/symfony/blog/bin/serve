@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+if (!is_dir(dirname(__DIR__).'/vendor')) {
+    throw new LogicException('Dependencies are missing. Try running "composer install".');
+}
+
+$publicDir = dirname(__DIR__).'/public';
+if (!is_dir($publicDir)) {
+    throw new LogicException('Public directory is missing.');
+}
+
+$host = $_SERVER['SERVER_HOST'] ?? $_ENV['SERVER_HOST'] ?? '127.0.0.1';
+$port = $_SERVER['SERVER_PORT'] ?? $_ENV['SERVER_PORT'] ?? 8000;
+
+if (isset($argv[1])) {
+    $port = (int) $argv[1];
+}
+
+$address = $host.':'.$port;
+
+echo sprintf("Server running at http://%s\n", $address);
+echo "Press Ctrl+C to stop the server.\n\n";
+
+$routerScript = $publicDir.'/index.php';
+passthru(sprintf('php -S %s -t %s %s', $address, escapeshellarg($publicDir), escapeshellarg($routerScript)));
+
