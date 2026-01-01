@@ -101,5 +101,10 @@ class BlogPost
         return $this;
     }
 
+    #[ORM\PreUpdate]
+    public function setUpdatedAtValue(): void
+    {
+        $this->updatedAt = new \DateTimeImmutable();
+    }
 }
 
