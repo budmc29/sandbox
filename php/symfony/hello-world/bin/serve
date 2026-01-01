@@ -22,5 +22,6 @@ $address = $host.':'.$port;
 echo sprintf("Server running at http://%s\n", $address);
 echo "Press Ctrl+C to stop the server.\n\n";
 
-passthru(sprintf('php -S %s -t %s', $address, escapeshellarg($publicDir)));
+$routerScript = $publicDir.'/index.php';
+passthru(sprintf('php -S %s -t %s %s', $address, escapeshellarg($publicDir), escapeshellarg($routerScript)));
 
