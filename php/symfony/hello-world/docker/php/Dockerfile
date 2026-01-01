@@ -1,21 +1,22 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.4-fpm-alpine
 
 RUN apk add --no-cache \
     postgresql-dev \
     icu-dev \
+    linux-headers \
     && docker-php-ext-install pdo pdo_pgsql intl opcache
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-COPY composer.json composer.lock ./
-RUN composer install --no-scripts --no-autoloader
+COPY composer.json ./
+RUN composer install --no-scripts --no-autoloader --no-dev --ignore-platform-reqs || true
 
 COPY . .
-RUN composer dump-autoload --optimize
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 
-RUN chown -R www-data:www-data /app/var
+RUN mkdir -p /app/var && chown -R www-data:www-data /app/var
 
 EXPOSE 9000
 

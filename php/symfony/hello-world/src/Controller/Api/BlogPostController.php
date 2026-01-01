@@ -33,7 +33,7 @@ class BlogPostController extends AbstractController
             'datetime_format' => 'Y-m-d H:i:s',
         ]);
 
-        return new JsonResponse(json_decode($data, true), Response::HTTP_OK, [], true);
+        return JsonResponse::fromJsonString($data, Response::HTTP_OK);
     }
 
     #[Route('/{id}', name: 'show', methods: ['GET'])]
@@ -50,7 +50,7 @@ class BlogPostController extends AbstractController
             'datetime_format' => 'Y-m-d H:i:s',
         ]);
 
-        return new JsonResponse(json_decode($data, true), Response::HTTP_OK, [], true);
+        return JsonResponse::fromJsonString($data, Response::HTTP_OK);
     }
 
     #[Route('', name: 'create', methods: ['POST'])]
@@ -80,7 +80,7 @@ class BlogPostController extends AbstractController
             'datetime_format' => 'Y-m-d H:i:s',
         ]);
 
-        return new JsonResponse(json_decode($responseData, true), Response::HTTP_CREATED, [], true);
+        return JsonResponse::fromJsonString($responseData, Response::HTTP_CREATED);
     }
 
     #[Route('/{id}', name: 'update', methods: ['PUT'])]
@@ -120,7 +120,7 @@ class BlogPostController extends AbstractController
             'datetime_format' => 'Y-m-d H:i:s',
         ]);
 
-        return new JsonResponse(json_decode($responseData, true), Response::HTTP_OK, [], true);
+        return JsonResponse::fromJsonString($responseData, Response::HTTP_OK);
     }
 
     #[Route('/{id}', name: 'delete', methods: ['DELETE'])]
